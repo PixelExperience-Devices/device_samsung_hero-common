@@ -135,4 +135,19 @@ TARGET_LMKD_STATS_LOG := true
 
 # call the proprietary setup
 $(call inherit-product, vendor/samsung/hero-common/hero-common-vendor.mk)
-$(call inherit-product, vendor/seal/seal/seal-common-vendor.mk)
+$(call inherit-product, vendor/samsung/universal8890/universal8890-common-vendor.mk)
+
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext \
+    ims-ext-common \
+    ims_ext_common.xml
+
+ PRODUCT_BOOT_JARS += \
+    telephony-ext
+
+# Boot Animation
+TARGET_BOOT_ANIMATION_RES := 1440
+
+# Google Apps
+TARGET_GAPPS_ARCH := arm64
